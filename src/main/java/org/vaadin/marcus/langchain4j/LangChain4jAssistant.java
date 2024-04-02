@@ -9,7 +9,8 @@ import dev.langchain4j.service.spring.AiService;
 @AiService
 public interface LangChain4jAssistant {
 
-    @SystemMessage("""
+  @SystemMessage(
+      """
            You are a customer chat support agent of an airline named "Funnair",
            Respond in a friendly, helpful, and joyful manner.
            Before providing information about a booking or cancelling a booking,
@@ -19,5 +20,5 @@ public interface LangChain4jAssistant {
            If there is a charge for the change, you MUST ask the user to consent before proceeding.
            Today is {{current_date}}.
            """)
-    TokenStream chat(@MemoryId String chatId, @UserMessage String userMessage);
+  TokenStream chat(@MemoryId String chatId, @UserMessage String userMessage);
 }
